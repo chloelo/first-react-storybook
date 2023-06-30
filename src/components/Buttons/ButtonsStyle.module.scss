@@ -1,0 +1,50 @@
+.btn {
+  &-base {
+    @apply text-base px-2.5 py-2 font-normal shadow-none hover:shadow-none rounded-lg mx-1 flex items-center;
+    i {
+      margin: 0 5px 0 0;
+    }
+    &:hover {
+      @apply opacity-90;
+      i {
+        filter: invert(50%) brightness(2);
+      }
+    }
+  }
+  &-primary {
+    @apply bg-primary-500 text-white;
+  }
+  &-danger {
+    @apply bg-red-500 text-white;
+  }
+  &-light {
+    @apply bg-stone-50 text-gray-600;
+    &:hover {
+      @apply bg-gray-400 text-white;
+    }
+  }
+  &-primary-outline {
+    @apply border border-primary-500 bg-primary-300 text-primary-500;
+    &:hover {
+      @apply bg-primary-500 text-white;
+    }
+  }
+  &-light-outline {
+    @apply border border-gray-100 bg-white text-gray-500;
+    &:hover {
+      @apply bg-primary-500 text-white;
+    }
+  }
+  &-close {
+    &.dark {
+      filter: invert(1) brightness(2);
+    }
+    @apply bg-no-repeat opacity-50 border-0 cursor-pointer;
+    width: 35px;
+    height: 35px;
+    background-position: -54px -5px;
+    &:hover {
+      @apply opacity-100;
+    }
+  }
+}
