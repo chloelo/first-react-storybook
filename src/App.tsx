@@ -1,6 +1,5 @@
-import DarkModeContext, {
-  type DarkModeContextType,
-} from '@/context/DarkModeContext';
+// import { DarkModeProvider } from '@/context/DarkModeContext';
+import DarkModeContext from '@/context/DarkModeContext';
 import { useState, useContext } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
@@ -10,9 +9,7 @@ import './tailwind.scss';
 import MyButton from './components/Buttons/MyButton';
 
 function App() {
-  const { darkMode, toggleDarkMode } = useContext(
-    DarkModeContext
-  ) as DarkModeContextType;
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   const [count, setCount] = useState(0);
 

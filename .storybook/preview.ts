@@ -1,9 +1,10 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from '@storybook/react';
+// import { DarkModeProvider } from '../src/context/DarkModeContext';
 import '../src/tailwind.scss';
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -14,18 +15,28 @@ const preview: Preview = {
 };
 
 export default preview;
+// import { withThemeByDataAttribute } from '@storybook/addon-styling';
 
-import { withThemeByDataAttribute } from '@storybook/addon-styling';
+// /* snipped for brevity */
 
-/* snipped for brevity */
+// export const decorators = [
+//   withThemeByDataAttribute({
+//     themes: {
+//       light: 'light',
+//       dark: 'dark',
+//     },
+//     defaultTheme: 'light',
+//     attributeName: 'data-mode',
+//   }),
+// ];
+import { withThemeByClassName } from '@storybook/addon-styling';
 
 export const decorators = [
-  withThemeByDataAttribute({
+  withThemeByClassName({
     themes: {
-      light: 'light',
+      light: '',
       dark: 'dark',
     },
     defaultTheme: 'light',
-    attributeName: 'data-mode',
   }),
 ];

@@ -5,9 +5,11 @@ export type DarkModeContextType = {
   toggleDarkMode: () => void;
 };
 
-const DarkModeContext = createContext<DarkModeContextType | undefined>(
-  undefined
-);
+const DarkModeContext = createContext<DarkModeContextType>({
+  darkMode: false,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  toggleDarkMode: () => {},
+});
 
 export function DarkModeProvider({
   children,
@@ -32,6 +34,10 @@ export function DarkModeProvider({
     } else {
       document.documentElement.classList.remove('dark');
     }
+    document.documentElement.setAttribute(
+      'data-theme',
+      darkMode ? 'dark' : 'light'
+    );
   }, [darkMode]);
   const toggleDarkMode = (): void => {
     setDarkMode((prevDarkMode) => {

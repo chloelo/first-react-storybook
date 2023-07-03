@@ -12,7 +12,7 @@ type ButtonProps = {
 	onClick?: () => void;
 };
 
-function MyButton({
+function SCButton({
 	children,
 	btnStyle = "primary",
 	classNames,
@@ -53,8 +53,8 @@ function MyButton({
 	);
 }
 
-MyButton.defaultProps = {
-	clickFn: undefined,
+SCButton.defaultProps = {
+	onClick: undefined,
 };
 
-export default MyButton;
+export default SCButton;
