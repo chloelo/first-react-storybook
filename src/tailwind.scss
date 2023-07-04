@@ -6,7 +6,7 @@ html[data-mode="dark"] {
   @apply bg-slate-800 text-white;
 }
 html {
-  @apply bg-slate-200 text-red-600;
+  @apply bg-slate-200 text-slate-600;
   &.dark {
     @apply bg-slate-900 text-white;
   }

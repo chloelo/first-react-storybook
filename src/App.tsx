@@ -38,7 +38,7 @@ function App() {
       <div>
         <MyButton onClick={toggleDarkMode}>按鈕</MyButton>
       </div>
-      <div className='p-2 bg-red-500 dark:bg-blue-500 dark:text-white font-bold'>
+      <div className='mt-4 p-2 bg-slate-600 text-yellow-500 dark:bg-blue-500 dark:text-white font-bold'>
         {darkMode ? '暗色' : '亮色'}
       </div>
     </>

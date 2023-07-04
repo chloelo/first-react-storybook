@@ -36,7 +36,7 @@ export function DarkModeProvider({
     }
     document.documentElement.setAttribute(
       'data-theme',
-      darkMode ? 'dark' : 'light'
+      darkMode ? 'dark' : ''
     );
   }, [darkMode]);
   const toggleDarkMode = (): void => {

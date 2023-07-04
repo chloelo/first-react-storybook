@@ -31,6 +31,7 @@ export default preview;
 // ];
 import { withThemeByClassName } from '@storybook/addon-styling';
 
+// global level decorator
 export const decorators = [
   withThemeByClassName({
     themes: {
