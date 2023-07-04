@@ -15,29 +15,29 @@ const preview: Preview = {
 };
 
 export default preview;
-// import { withThemeByDataAttribute } from '@storybook/addon-styling';
+import { withThemeByDataAttribute } from '@storybook/addon-styling';
 
-// /* snipped for brevity */
+/* snipped for brevity */
 
-// export const decorators = [
-//   withThemeByDataAttribute({
-//     themes: {
-//       light: 'light',
-//       dark: 'dark',
-//     },
-//     defaultTheme: 'light',
-//     attributeName: 'data-mode',
-//   }),
-// ];
-import { withThemeByClassName } from '@storybook/addon-styling';
-
-// global level decorator
 export const decorators = [
-  withThemeByClassName({
+  withThemeByDataAttribute({
     themes: {
       light: '',
       dark: 'dark',
     },
-    defaultTheme: 'light',
+    defaultTheme: '',
+    attributeName: 'data-theme',
   }),
 ];
+// import { withThemeByClassName } from '@storybook/addon-styling';
+
+// // global level decorator
+// export const decorators = [
+//   withThemeByClassName({
+//     themes: {
+//       light: '',
+//       dark: 'dark',
+//     },
+//     defaultTheme: 'light',
+//   }),
+// ];

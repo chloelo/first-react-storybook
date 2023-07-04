@@ -2,15 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-html[data-mode="dark"] {
-  @apply bg-slate-800 text-white;
-}
-html {
-  @apply bg-slate-200 text-slate-600;
-  &.dark {
-    @apply bg-slate-900 text-white;
+@layer base {
+  :root {
+    --color-tryPrimary: 125 163 255;
+    --color-trySecondary: 11 55 145;
+    @apply bg-slate-100 text-slate-600;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-tryPrimary: 24 49 77;
+      --color-trySecondary: 15 237 248;
+      @apply bg-slate-800 text-white;
+    }
+  }
+  :root[data-theme="dark"] {
+    // 等同 html 標籤
+    --color-tryPrimary: 24 49 77;
+    --color-trySecondary: 15 237 248;
+    @apply bg-slate-800 text-white;
   }
 }
+
+// html[data-theme="dark"] {
+//   @apply bg-slate-800 text-white;
+// }
+// html {
+//   @apply bg-slate-200 text-slate-600;
+//   &.dark {
+//     @apply bg-slate-900 text-white;
+//   }
+// }
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",

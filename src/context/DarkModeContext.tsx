@@ -29,11 +29,11 @@ export function DarkModeProvider({
     }
   }, []);
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    // if (darkMode) {
+    //   document.documentElement.classList.add('dark');
+    // } else {
+    //   document.documentElement.classList.remove('dark');
+    // }
     document.documentElement.setAttribute(
       'data-theme',
       darkMode ? 'dark' : ''
