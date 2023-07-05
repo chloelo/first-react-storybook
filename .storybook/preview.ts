@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/react';
-// import { DarkModeProvider } from '../src/context/DarkModeContext';
-import '../src/tailwind.scss';
+import '../src/main.scss';
 
 const preview: Preview = {
   parameters: {
