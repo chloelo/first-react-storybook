@@ -6,7 +6,7 @@
   :root {
     --color-tryPrimary: 125 163 255;
     --color-trySecondary: 11 55 145;
-    @apply bg-slate-100 text-slate-600;
+    @apply bg-slate-50 text-slate-600 p-4;
   }
   @media (prefers-color-scheme: dark) {
     :root {
