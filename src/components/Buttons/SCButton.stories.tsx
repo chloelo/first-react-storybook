@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import MyButton from './MyButton';
-const meta: Meta<typeof MyButton> = {
+import SCButton from './SCButton';
+const meta: Meta<typeof SCButton> = {
   title: 'Example/SCButton', // 資料夾分類放在 title
-  component: MyButton,
+  component: SCButton,
   tags: ['autodocs'],
   argTypes: {
     btnStyle: {
@@ -54,5 +54,16 @@ export const PrimaryOutline: Story = {
 export const Close: Story = {
   args: {
     btnStyle: 'close',
+  },
+};
+export const WithCustomChildren: Story = {
+  args: {
+    btnStyle: 'primary',
+    children: (
+      <div>
+        <h2 className='dark:border-b border-b-yellow-500'>Custom Heading</h2>
+        <p>Custom child content goes here.</p>
+      </div>
+    ),
   },
 };
