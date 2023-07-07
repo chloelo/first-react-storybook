@@ -1,6 +1,7 @@
-import FirstChart from '@/components/charts/FirstChart';
+import XYChart from '@/components/charts/XYChart';
+import DonutChart from '@/components/charts/DonutChart';
 
-const data = [
+const XYChartData = [
   {
     category: 'Research',
     value1: 1000,
@@ -19,8 +20,9 @@ const data = [
 ];
 const ChartPage = () => {
   return (
-    <div>
-      <FirstChart data={data} />
+    <div className='md:flex md:gap-4'>
+      <XYChart data={XYChartData} />
+      <DonutChart />
     </div>
   );
 };
