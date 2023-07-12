@@ -3,6 +3,7 @@ import ErrorPage from '@/pages/ErrorPage';
 import TryDarkModePage from '@/pages/TryDarkModePage';
 import RootLayout from '@/layout/RootLayout';
 import ChartPage from '@/pages/ChartPage';
+import ChartPage2 from '@/pages/ChartPage2';
 
 const router = createBrowserRouter([
   {
