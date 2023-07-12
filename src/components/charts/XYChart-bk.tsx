@@ -110,11 +110,9 @@ export default function XYChart({ data, chartId }: XYChartProps) {
         // stroke: am5.color(0x2973d3),
       });
       // Add legend
-      const legend = chart.children.push(am5.Legend.new(root, {
-        clickTarget: "none"
-      }));
+      const legend = chart.children.push(am5.Legend.new(root, {}));
       legend.data.setAll(chart.series.values);
-    
+
       // Add cursor
       chart.set('cursor', am5xy.XYCursor.new(root, {}));
 

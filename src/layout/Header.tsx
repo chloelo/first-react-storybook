@@ -8,7 +8,7 @@ const Header = () => {
   const { toggleDarkMode } = useContext(DarkModeContext);
   return (
     <nav
-      className={`border-b border-b-slate-300 fixed left-0 right-0 top-0 bg-slate-200 dark:bg-slate-800 dark:border-b-slate-600 p-2 ${styles.headerWrap}`}
+      className={`border-b border-b-slate-300 fixed left-0 right-0 top-0 z-10 bg-slate-200 dark:bg-slate-800 dark:border-b-slate-600 p-2 ${styles.headerWrap}`}
     >
       <ul className='flex gap-2 items-center'>
         <li>

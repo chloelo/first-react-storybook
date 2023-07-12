@@ -2,27 +2,21 @@ import DarkModeContext from '@/context/DarkModeContext';
 import { useLayoutEffect, useRef, useContext } from 'react';
 import * as am5 from '@amcharts/amcharts5';
 import * as am5percent from '@amcharts/amcharts5/percent';
-// import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
-// import am5themes_Dark from '@amcharts/amcharts5/themes/Dark';
-import { setChartTheme, useChartTheme } from './useChartConfig';
-type DonutChartProps = {
-  data: {
-    value: number;
-    category: string;
-  }[];
-  chartId: string;
-  chartTitle?: string;
-};
-const DonutChart = ({
-  data,
-  chartId,
-  chartTitle,
-}: DonutChartProps): JSX.Element => {
+import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
+import am5themes_Dark from '@amcharts/amcharts5/themes/Dark';
+
+const DonutChart = (): JSX.Element => {
   const { darkMode } = useContext(DarkModeContext);
   const rootRef = useRef<am5.Root | null>(null);
-
+  function setChartTheme(root: am5.Root, isDarkMode: boolean) {
+    root.setThemes(
+      isDarkMode
+        ? [am5themes_Animated.new(root), am5themes_Dark.new(root)]
+        : [am5themes_Animated.new(root)]
+    );
+  }
   useLayoutEffect(() => {
-    rootRef.current = am5.Root.new(chartId);
+    rootRef.current = am5.Root.new('chartDiv2');
     const root = rootRef.current;
     root?._logo?.dispose(); // 隱藏 amCharts logo
     setChartTheme(root, darkMode);
@@ -32,7 +26,7 @@ const DonutChart = ({
     const chart = root.container.children.push(
       am5percent.PieChart.new(root, {
         layout: root.verticalLayout,
-        innerRadius: am5.percent(70),
+        innerRadius: am5.percent(50),
       })
     );
 
@@ -47,20 +41,16 @@ const DonutChart = ({
     );
     series.labels.template.setAll({
       textType: 'circular',
-      text:"{category}",
-      // inside: true,
       centerX: 0,
       centerY: 0,
     });
     // series.set("stroke", am5.color(0xff0000));
     // series.labels.template.set('forceHidden', true);
-    series.ticks.template.set('forceHidden', true);
+    // series.ticks.template.set('forceHidden', true);
 
     series.children.push(
       am5.Label.new(root, {
-        text: `${
-          chartTitle ? chartTitle : ''
-        } [fontSize: 12px; verticalAlign: super;]So it begins...[/]\n[fontSize: 14px; verticalAlign: super;]and ends on a second line.[/] `,
+        text: 'Hi there!',
         fontSize: 32,
         centerX: am5.percent(50),
         centerY: am5.percent(50),
@@ -69,7 +59,15 @@ const DonutChart = ({
 
     // Set data
     // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
-    series.data.setAll(data);
+    series.data.setAll([
+      { value: 10, category: 'One' },
+      { value: 9, category: 'Two' },
+      { value: 6, category: 'Three' },
+      { value: 5, category: 'Four' },
+      { value: 4, category: 'Five' },
+      { value: 3, category: 'Six' },
+      { value: 1, category: 'Seven' },
+    ]);
 
     // Create legend
     // https://www.amcharts.com/docs/v5/charts/percent-charts/legend-percent-series/
@@ -101,14 +99,13 @@ const DonutChart = ({
       root.dispose();
     };
   }, []);
-  useChartTheme({ rootRef, darkMode });
-  // useLayoutEffect(() => {
-  //   if (rootRef.current) {
-  //     const root = rootRef.current;
-  //     setChartTheme(root, darkMode);
-  //   }
-  // }, [darkMode]);
-  return <div id={chartId} style={{ width: '100%', height: '500px' }}></div>;
+  useLayoutEffect(() => {
+    if (rootRef.current) {
+      const root = rootRef.current;
+      setChartTheme(root, darkMode);
+    }
+  }, [darkMode]);
+  return <div id='chartDiv2' style={{ width: '100%', height: '500px' }}></div>;
 };
 
 export default DonutChart;
