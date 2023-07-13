@@ -28,7 +28,7 @@ const Header = () => {
             }
             to={`charts`}
           >
-            amcharts
+            amcharts basic charts demo
           </NavLink>
         </li>
         <li className='ml-auto'>

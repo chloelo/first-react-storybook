@@ -1,4 +1,4 @@
-import XYChartDemo from '@/components/charts/XYChartDemo';
+import XYChartDemo from '@/components/chartsDemo/XYChartDemo';
 import DonutChart from '@/components/charts/DonutChart';
 import { XYChartData, Donut1Data, Donut2Data } from './data';
 

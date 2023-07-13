@@ -111,29 +111,32 @@ export const DonutChartData = [
 ];
 
 // Generate random data
-const date = new Date();
-date.setHours(0, 0, 0, 0);
-let value = 100;
+const lineChartWithRangeSlideDate = new Date();
+lineChartWithRangeSlideDate.setHours(0, 0, 0, 0);
+let lineChartWithRangeSlideValue = 100;
 
-function generateData() {
-  value = Math.round(Math.random() * 10 - 5 + value);
-  am5.time.add(date, 'day', 1);
+function generateLineChartWithRangeSlideData() {
+  lineChartWithRangeSlideValue = Math.round(
+    Math.random() * 10 - 5 + lineChartWithRangeSlideValue
+  );
+  am5.time.add(lineChartWithRangeSlideDate, 'day', 1);
   return {
-    date: date.getTime(),
-    value: value,
+    date: lineChartWithRangeSlideDate.getTime(),
+    value: lineChartWithRangeSlideValue,
   };
 }
 
-function generateDatas(count: number) {
+function generateLineChartWithRangeSlideDatas(count: number) {
   const data = [];
   for (let i = 0; i < count; ++i) {
-    data.push(generateData());
+    data.push(generateLineChartWithRangeSlideData());
   }
   return data;
 }
 
 // Set data
-export const LineChartData = generateDatas(1200);
+export const LineChartWithRangeSliderData =
+  generateLineChartWithRangeSlideDatas(1200);
 
 export const StackLineChartData = [
   {
@@ -251,3 +254,27 @@ export const StackLineChartData = [
     bicycles: 71,
   },
 ];
+
+const highlightingLineChartSeriesDate = new Date();
+highlightingLineChartSeriesDate.setHours(0, 0, 0, 0);
+let highlightingLineChartSeriesValue = 100;
+
+function generateHighlightingLineChartSeriesData() {
+  highlightingLineChartSeriesValue = Math.round(Math.random() * 10 - 4.2 + highlightingLineChartSeriesValue);
+  am5.time.add(highlightingLineChartSeriesDate, 'day', 1);
+  return {
+    date: highlightingLineChartSeriesDate.getTime(),
+    value: highlightingLineChartSeriesValue,
+  };
+}
+
+function generateHighlightingLineChartSeriesDatas(count: number) {
+  const data = [];
+  for (let i = 0; i < count; ++i) {
+    data.push(generateHighlightingLineChartSeriesData());
+  }
+  return data;
+}
+
+export const HighlightingLineChartSeriesData =
+  generateHighlightingLineChartSeriesDatas(100);

@@ -8,7 +8,7 @@ import {
   setChartTheme,
   useChartTheme,
   useAmchartsRoot,
-} from '@/components/charts/useCharts';
+} from '@/components/chartsDemo/useCharts';
 
 type DonutChartDemoProps = {
   data: {
@@ -27,6 +27,7 @@ const DonutChartDemo = ({ data, chartId }: DonutChartDemoProps) => {
     myThemeRef.current = am5.Theme.new(rootRef.current);
     myThemeRef.current.rule('Label').set('fontSize', '0.8em');
   }
+
   useChartTheme(rootRef, darkMode, myThemeRef.current);
 
   useEffect(() => {

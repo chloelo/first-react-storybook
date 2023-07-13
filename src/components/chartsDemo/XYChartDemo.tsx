@@ -7,7 +7,7 @@ import {
   setChartTheme,
   useChartTheme,
   useAmchartsRoot,
-} from '@/components/charts/useCharts';
+} from '@/components/chartsDemo/useCharts';
 
 type XYChartDemoProps = {
   data: {

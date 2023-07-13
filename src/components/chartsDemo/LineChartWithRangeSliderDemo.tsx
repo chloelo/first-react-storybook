@@ -7,9 +7,9 @@ import {
   setChartTheme,
   useChartTheme,
   useAmchartsRoot,
-} from '@/components/charts/useCharts';
+} from '@/components/chartsDemo/useCharts';
 
-type LineChartDemoProps = {
+type LineChartWithRangeSliderDemoProps = {
   data: {
     date: number;
     value: number;
@@ -17,7 +17,7 @@ type LineChartDemoProps = {
   chartId: string;
 };
 
-export default function LineChartDemo({ data, chartId }: LineChartDemoProps) {
+export default function LineChartWithRangeSliderDemo({ data, chartId }: LineChartWithRangeSliderDemoProps) {
   const { darkMode } = useContext(DarkModeContext);
   const series1Ref = useRef<am5xy.ColumnSeries | null>(null);
   const series2Ref = useRef<am5xy.ColumnSeries | null>(null);
