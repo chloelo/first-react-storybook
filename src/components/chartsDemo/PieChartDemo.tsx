@@ -60,6 +60,7 @@ const PieChartDemo = ({ data, chartId }: PieChartDemoProps) => {
   const rootRef = useAmchartsRoot(chartId);
   useChartTheme(rootRef, darkMode);
   useEffect(() => {
+
     // Create root and chart
     /* Chart code */
     // Create root element

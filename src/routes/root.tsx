@@ -3,7 +3,8 @@ import ErrorPage from '@/pages/ErrorPage';
 import TryDarkModePage from '@/pages/TryDarkModePage';
 import RootLayout from '@/layout/RootLayout';
 import ChartPage from '@/pages/ChartPage';
-import ChartPage2 from '@/pages/ChartPage2';
+import FirstApolloPage from "@/pages/FirstApolloPage";
+// import ChartClassPage from '@/pages/ChartClassPage';
 
 const router = createBrowserRouter([
   {
@@ -16,9 +17,17 @@ const router = createBrowserRouter([
         element: <TryDarkModePage />,
       },
       {
-        path: 'charts',
+        path: 'charts-demo',
         element: <ChartPage />,
       },
+      {
+        path: 'apollo-try',
+        element: <FirstApolloPage />,
+      },
+      // {
+      //   path: 'charts-class',
+      //   element: <ChartClassPage />,
+      // },
     ],
   },
 ]);

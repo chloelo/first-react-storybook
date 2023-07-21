@@ -14,7 +14,7 @@ const Header = () => {
         <li>
           <NavLink
             className={({ isActive, isPending }) =>
-              isActive ? `${styles.active}`: isPending ? 'pending' : ''
+              isActive ? `${styles.active}` : isPending ? 'pending' : ''
             }
             to={`/`}
           >
@@ -26,9 +26,19 @@ const Header = () => {
             className={({ isActive, isPending }) =>
               isActive ? `${styles.active}` : isPending ? 'pending' : ''
             }
-            to={`charts`}
+            to={`charts-demo`}
           >
             amcharts basic charts demo
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isActive ? `${styles.active}` : isPending ? 'pending' : ''
+            }
+            to={`apollo-try`}
+          >
+            First Apollo try
           </NavLink>
         </li>
         <li className='ml-auto'>
